@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/crypto-lab-ckks-lab/'
+  base: '/cryto-lab-ckks-lab/'
 })
