@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <script>
       (function () {
-        const saved = localStorage.getItem('theme');
+        const saved = localStorage.getItem('cl-theme');
         document.documentElement.setAttribute('data-theme', saved ?? 'dark');
       })();
     </script>
@@ -16,11 +16,36 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/crypto-lab-ckks-lab/assets/index-Cbsta6Jm.js"></script>
-    <link rel="stylesheet" crossorigin href="/crypto-lab-ckks-lab/assets/index-KMsrZhkx.css">
+    <script type="module" crossorigin src="/crypto-lab-ckks-lab/assets/index-BhAaqHEn.js"></script>
+    <link rel="stylesheet" crossorigin href="/crypto-lab-ckks-lab/assets/index-CrqC79hM.css">
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="cl-header">
+      <div class="cl-header-left">
+        <div class="cl-badge">CL</div>
+        <div class="cl-header-text">
+          <span class="cl-title">CRYPTO LAB</span>
+          <a class="cl-sub"
+             href="https://systemslibrarian.dev"
+             target="_blank"
+             rel="noopener">
+            systemslibrarian.dev
+          </a>
+        </div>
+      </div>
+      <nav class="cl-header-nav">
+        <a class="cl-nav-btn"
+           href="https://github.com/systemslibrarian/crypto-lab-ckks-lab"
+           target="_blank"
+           rel="noopener">
+          GitHub
+        </a>
+        <button class="cl-theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          ☀
+        </button>
+      </nav>
+    </header>
     <div id="app"></div>
     <footer class="site-footer" role="contentinfo">
       Whether you eat or drink or whatever you do, do it all for the glory of God. — 1 Corinthians 10:31
