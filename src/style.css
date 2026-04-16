@@ -296,6 +296,220 @@ html[data-theme='light'] a {
   margin-top: 2rem;
 }
 
+/* ── Narrative & Framework Styles ─────────────────────── */
+
+.narrative-intro {
+  border: 1px solid var(--green-soft);
+  background: var(--panel);
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+  margin-bottom: 1.2rem;
+}
+
+.narrative-intro p {
+  max-width: 80ch;
+}
+
+.narrative-scenario {
+  color: var(--green);
+  font-style: italic;
+  border-left: 3px solid var(--green-soft);
+  padding-left: 0.8rem;
+  margin: 0.8rem 0;
+}
+
+.decision-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.decision-panel > div {
+  border: 1px solid var(--edge);
+  padding: 0.75rem;
+  background: var(--panel);
+}
+
+.decision-panel h3 {
+  font-size: clamp(0.78rem, 1.8vw, 0.92rem);
+  margin-bottom: 0.4rem;
+}
+
+.decision-use { border-left: 3px solid var(--green) !important; }
+.decision-avoid { border-left: 3px solid var(--orange) !important; }
+.decision-tradeoffs { border-left: 3px solid var(--muted) !important; }
+.decision-complexity { border-left: 3px solid #7c6fc4 !important; }
+
+.phase-label {
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  background: rgba(0, 255, 204, 0.08);
+  border: 1px solid var(--green-soft);
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.phase-label-orange {
+  color: var(--orange);
+  background: rgba(255, 123, 69, 0.08);
+  border-color: var(--orange-soft);
+}
+
+html[data-theme='light'] .phase-label {
+  background: rgba(13, 111, 94, 0.06);
+}
+
+html[data-theme='light'] .phase-label-orange {
+  background: rgba(191, 79, 32, 0.06);
+}
+
+.exhibit-intro {
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  max-width: 80ch;
+}
+
+.exhibit-section {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--edge);
+}
+
+.tooltip-term {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--green-soft);
+  text-underline-offset: 3px;
+  cursor: help;
+  position: relative;
+}
+
+.tooltip-term::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0e1f1e;
+  color: #e8f5f0;
+  border: 1px solid #2a4a44;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  white-space: normal;
+  width: max-content;
+  max-width: 280px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.tooltip-term:hover::after,
+.tooltip-term:focus::after {
+  opacity: 1;
+}
+
+.threat-model {
+  border: 1px solid var(--orange-soft);
+  background: rgba(255, 123, 69, 0.04);
+  padding: clamp(0.75rem, 2vw, 1.2rem);
+  margin-top: 1rem;
+}
+
+html[data-theme='light'] .threat-model {
+  background: rgba(191, 79, 32, 0.04);
+}
+
+.threat-model h2,
+.threat-model h3 {
+  color: var(--orange);
+}
+
+.threat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+}
+
+.threat-grid > div {
+  border: 1px solid var(--edge);
+  padding: 0.6rem;
+}
+
+.references {
+  border: 1px solid var(--edge);
+  background: var(--panel);
+  padding: clamp(0.75rem, 2vw, 1.2rem);
+  margin-top: 1rem;
+}
+
+.references ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 0;
+}
+
+.references li {
+  margin-bottom: 0.35rem;
+  font-size: clamp(0.76rem, 1.8vw, 0.88rem);
+}
+
+.disclaimer {
+  border: 1px solid var(--orange-soft);
+  color: var(--orange);
+  padding: 0.6rem 0.8rem;
+  font-size: clamp(0.76rem, 1.8vw, 0.88rem);
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.flow-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  border: 1px solid var(--edge);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme='light'] .flow-visual {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.flow-step {
+  text-align: center;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--green-soft);
+  background: var(--panel);
+  font-size: clamp(0.72rem, 1.6vw, 0.85rem);
+  min-width: 90px;
+}
+
+.flow-arrow {
+  font-size: 1.2rem;
+  color: var(--green);
+  padding: 0 0.3rem;
+}
+
+@media (max-width: 860px) {
+  .decision-panel {
+    grid-template-columns: 1fr;
+  }
+  .threat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Range input touch target sizing */
 input[type='range'] {
   -webkit-appearance: none;
