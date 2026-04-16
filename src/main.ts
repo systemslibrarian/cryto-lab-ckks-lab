@@ -7,14 +7,11 @@ const app = document.querySelector('#app') as HTMLDivElement
 
 app.innerHTML = `
   <div class="app">
-    <header class="app-header" role="banner">
-      <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">🌙</button>
-      <h1>CKKS Lab: Approximate FHE for Real-Valued ML</h1>
-      <p class="subtitle">
-        Educational CKKS over toy parameters (n=8, slots=4, scale=2^10, modulus chain [2^30, 2^20]).
-        <strong>Educational CKKS — toy parameters. Production CKKS uses n &ge; 8192.</strong>
-      </p>
-    </header>
+    <h1>CKKS Lab: Approximate FHE for Real-Valued ML</h1>
+    <p class="subtitle">
+      Educational CKKS over toy parameters (n=8, slots=4, scale=2^10, modulus chain [2^30, 2^20]).
+      <strong>Educational CKKS — toy parameters. Production CKKS uses n &ge; 8192.</strong>
+    </p>
 
     <main class="exhibits" id="main-content" aria-label="Six CKKS exhibits">
       <section class="exhibit" id="exhibit-1" aria-labelledby="e1-heading" tabindex="-1">
@@ -257,16 +254,16 @@ function getCurrentTheme(): Theme {
   return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark'
 }
 
-const themeToggleBtn = document.querySelector('[data-theme-toggle]') as HTMLButtonElement
+const themeToggleBtn = document.getElementById('themeToggle') as HTMLButtonElement
 
 function syncThemeToggle(theme: Theme): void {
-  themeToggleBtn.textContent = theme === 'dark' ? '🌙' : '☀️'
-  themeToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`)
+  themeToggleBtn.textContent = theme === 'dark' ? '☀' : '☾'
+  themeToggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode')
 }
 
 function setTheme(theme: Theme): void {
   document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('theme', theme)
+  localStorage.setItem('cl-theme', theme)
   syncThemeToggle(theme)
 }
 
